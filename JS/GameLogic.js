@@ -156,6 +156,7 @@ var clickListener = function(e) {
         else return;
     }
 
+    // If Check button was clicked
     if(e.target.id == "checkButt")
     {
         var text = $("#answer").val();
