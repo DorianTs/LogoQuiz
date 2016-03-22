@@ -104,8 +104,7 @@ var logoLists = (function(){
 
 
 var clickListener = function(e) {
-    if(e.target.id == "startgamebutt" ||
-        (e.keyCode == 13 &&  $("#startgamebutt").css('display') != 'none')) {
+    if(e.target.id == "startgamebutt") {
         $("#startgamebutt").hide();
 
         // we need to initial the game now
