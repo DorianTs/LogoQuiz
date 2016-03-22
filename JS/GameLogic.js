@@ -104,7 +104,8 @@ var logoLists = (function(){
 
 
 var clickListener = function(e) {
-    if(e.target.id == "startgamebutt") {
+    if(e.target.id == "startgamebutt" ||
+        (e.keyCode == 13 &&  $("#startgamebutt").css('display') != 'none')) {
         $("#startgamebutt").hide();
 
         // we need to initial the game now
@@ -173,7 +174,8 @@ var clickListener = function(e) {
     }
 
     // If Check button was clicked
-    if(e.target.id == "checkButt")
+    if(e.target.id == "checkButt" ||
+        (e.keyCode == 13 && $("#nextStage").css('display') == 'none'))
     {
         var text = $("#answer").val();
         var logoName = getLogoName();
@@ -199,10 +201,7 @@ var clickListener = function(e) {
                 lives = 0;
                 $(".lives").html(lives);
 
-                var ScoreStr = localStorage.getItem("score");
-                var ScoreObj = JSON.parse(ScoreStr);
-                ScoreObj.score = score;
-                localStorage.setItem("score", JSON.stringify(ScoreObj));
+                setLocalStorageScore();
                 alert("Game Over!");
 
 
@@ -215,7 +214,8 @@ var clickListener = function(e) {
         }
     }
 
-    if(e.target.id == "nextStage")
+    if(e.target.id == "nextStage" ||
+        (e.keyCode == 13 && $("#nextStage").css('display') != 'none'))
     {
         stage++;
         updateLevel();
@@ -223,6 +223,7 @@ var clickListener = function(e) {
         {
             alert("You finished all the logos for now! Well done!");
             //go to other page (we need to save score for the leadership table)
+            setLocalStorageScore();
             window.location.href = "GameOverPage.html";
             return;
         }
@@ -245,6 +246,7 @@ var loadPage = function(){
     $("#startgamebutt").click(clickListener);
     $("#helpButton").click(clickListener);
     $("#checkButt").click(clickListener);
+    $(document).keydown(clickListener);
     $("#exitButt").click(clickListener);
     $("#nextStage").click(clickListener);
 
@@ -389,4 +391,12 @@ function cleanScreen() {
     $("#answer").val('');
     $("#answer").focus();
     $("#answer").attr('readonly', false);
+}
+
+/*Function sets the player score in the local storage*/
+function setLocalStorageScore(){
+    var ScoreStr = localStorage.getItem("score");
+    var ScoreObj = JSON.parse(ScoreStr);
+    ScoreObj.score = score;
+    localStorage.setItem("score", JSON.stringify(ScoreObj));
 }

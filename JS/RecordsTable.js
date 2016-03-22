@@ -24,7 +24,15 @@ var loadRecordsTable = function()
     var NameObj = JSON.parse(NameStr);
     var name = NameObj.name;
 
+    if(name==null && score==0)
+        return;
     add(name, score);
+
+    ScoreObj.score = 0;
+    localStorage.setItem("score", JSON.stringify(ScoreObj));
+    NameObj.name = null;
+    localStorage.setItem("name", JSON.stringify(NameObj));
+
 };
 
 //=========Here handling with score saving in local storage==============
@@ -48,6 +56,7 @@ var fillTable = function() {
     $("tr:gt(0)").remove();
 
     var items = JSON.parse(localStorage.getItem("Items"));
+    sortTableByScore(items);
     $.each(items, function(i, item) {
         var row = "<tr><td>" + (i+1) + ".</td><td>" + item.name + "</td><td>" + item.score + "</td></tr>";
         $("tr:last").after(row);
@@ -63,4 +72,27 @@ var newlist = function(){
     var items = [];
     localStorage.setItem("Items", JSON.stringify(items));
     fillTable();
+}
+
+function sortTableByScore(items){
+    var j;
+    var flag = true;   // set flag to true to begin first pass
+    var tempScore, tempName;   //holding variable
+
+    while (flag) {
+        flag= false;    //set flag to false awaiting a possible swap
+        for(j=0;j<items.length-1;j++) {
+            if(items[j].score < items[j+1].score)   // change to > for ascending sort
+            {
+                tempScore = items[j].score;
+                tempName = items[j].name;
+                items[j].score = items[j+1].score;
+                items[j].name = items[j+1].name;
+
+                items[j+1].score = tempScore;
+                items[j+1].name = tempName;
+                flag = true;              //shows a swap occurred
+            }
+        }
+    }
 }
