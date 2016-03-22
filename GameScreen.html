@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logo Quiz</title>
+    <script type = "text/javascript" src = "JS/GameLogic.js"></script>
+    <link rel = "stylesheet" href = "css/GeneralStyle.css" type = "text/css"/>
+    <link rel = "stylesheet" href = "css/GameScreen.css" type = "text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+<body onload="loadPage()">
+
+<button type="button" id="startgamebutt">Start The game</button>
+<div class="ScreenPanel">
+
+    <span class="scoreLabel">Score: <span class="score"></span> </span>
+
+    <span class="stageLabel">Stage: <span class="stage"></span> </span>
+
+    <span class="levelLabel">Level: <span class="level"></span> </span>
+
+    <span class="LivesLabel">Lives: <span class="lives"></span> </span>
+    <p/>
+
+    <div class="sloganPlace"></div>
+    <img id="img" src=""/>
+    <label for="answer" class="labelans">Enter your answer here:</label>
+    <br/>
+    <input type="text" id="answer" autofocus/>
+    <br/>
+    <button type="button" id="nextStage">Well done! next stage here</button>
+    <button type="button" id="helpButton">Get Clue</button>
+    <button type="button" id="checkButt">Check Answer</button>
+    <button type="button" id="exitButt">Return to main page</button>
+
+
+</div>
+
+
+</body>
+</html>

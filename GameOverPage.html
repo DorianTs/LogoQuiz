@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel = "stylesheet" href = "css/GeneralStyle.css" type = "text/css"/>
+    <link rel = "stylesheet" href = "css/GameOver.css" type = "text/css"/>
+    <script type = "text/javascript" src="JS/GameOverPage.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <title>Logo Quiz</title>
+</head>
+
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+<body onload="loadGameOverScreen()">
+
+<div class="ScreenPanel">
+    <div class="title">Save your score in the leadership table!</div>
+    <br/>
+    <label for="playerName">Enter your name:</label>
+    <input type="text" id="playerName"/>
+    <br/>
+    <button type="button" id="sendButt">Send</button>
+    <button type="button" id="cancelButt">Cancel</button>
+</div>
+
+</body>
+</html>

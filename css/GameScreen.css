@@ -1,0 +1,94 @@
+#startgamebutt{
+    position: absolute;
+    margin-left:267px;
+
+    display:inline-block;
+    margin-top:0px;
+    width:800px;
+    background-color: black;
+    color:white;
+    font-weight:bold;
+    font-family:Rockwell;
+    font-size:30px;
+
+}
+.ScreenPanel{
+    margin-left: auto;
+    margin-right: auto;
+    height:630px;
+    width:800px;
+    background-color:firebrick;
+    text-align: left;
+}
+
+.scoreLabel, .stageLabel, .levelLabel, .LivesLabel {
+    display:inline-block;
+    margin-left:60px;
+    margin-top:70px;
+    font-size:25px;
+    color:white;
+    font-family: Rockwell;
+}
+
+.labelans{
+    display:inline-block;
+    margin-top:100px;
+    margin-left:280px;
+    font-size:20px;
+    color:white;
+    font-family: Rockwell;
+
+}
+
+.sloganPlace{
+    text-align:center;
+    font-size:30px;
+    color:ivory;
+    font-family:Century Gothic;
+    margin-top:100px;
+}
+
+#answer{
+    margin-left:240px;
+    margin-top:10px;
+    width:300px;
+    height:30px;
+    font-size:30px;
+    text-align: center;
+}
+
+#helpButton, #checkButt, #exitButt{
+    font-size:20px;
+    width:220px;
+    height:40px;
+    margin-left:10px;
+    margin-top:125px;
+    background-color: black;
+    font-weight: bold;
+    color:white;
+    font-family: Rockwell;
+}
+
+#nextStage{
+    position:absolute;
+    top:370px;
+    margin-left:290px;
+    font-size:20px;
+    background-color: coral;
+    font-weight: bold;
+    color:white;
+    font-family: Rockwell;
+
+}
+
+#helpButton{
+    margin-left:20px;
+}
+
+#img{
+    position: absolute;
+    height:200px;
+    width:200px;
+    margin-left:10px;
+}
+
