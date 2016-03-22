@@ -10,17 +10,14 @@
     font-family: Rockwell;
 }
 
-table, th, td {
-    border: 5px outset white;
-}
+
 
 table{
     border-collapse: collapse;
     cellspacing:0px;
     cellpadding:1px;
-    border:1px;
+
     width:100%;
-    background: white;
 }
 
 td{
@@ -50,9 +47,9 @@ th, td {
 }
 
 tr:nth-child(even)
-{background-color: firebrick}
+{background-color: blueviolet;}
 
 th {
-    background-color: firebrick;
+    background-color: blueviolet;
     color: white;
 }

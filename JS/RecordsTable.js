@@ -51,9 +51,7 @@ var addItem = function(item) {
 
 var fillTable = function() {
     if(localStorage.getItem("Items") == undefined) {
-        var items = [];
-        localStorage.setItem("Items", JSON.stringify(items));
-        return;
+       return;
     }
 
     $("tr:gt(0)").remove();
