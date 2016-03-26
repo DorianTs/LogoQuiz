@@ -18,10 +18,14 @@ var loadRecordsTable = function()
     fillTable();
 
     var ScoreStr = localStorage.getItem("score");
+    if(ScoreStr == null)
+        return;
     var ScoreObj = JSON.parse(ScoreStr);
     var score = ScoreObj.score;
 
     var NameStr = localStorage.getItem("name");
+    if(NameStr == null)
+        return;
     var NameObj = JSON.parse(NameStr);
     var name = NameObj.name;
 
@@ -45,6 +49,11 @@ var add = function(name, score) {
 
 var addItem = function(item) {
     var itemsStr = localStorage.getItem("Items");
+    if(itemsStr == null){
+        var items = [];
+        localStorage.setItem("Items", JSON.stringify(items));
+        itemsStr = localStorage.getItem("Items");
+    }
     var itemsObj = JSON.parse(itemsStr);
     itemsObj.push(item);
     localStorage.setItem("Items", JSON.stringify(itemsObj));
