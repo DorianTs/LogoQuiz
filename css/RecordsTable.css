@@ -1,13 +1,16 @@
 #cmdNewList, #mainPage{
     font-size:20px;
-    width:220px;
-    height:40px;
-    margin-left:10px;
-    margin-top:60px;
-    background-color: black;
+    width:270px;
+    height:60px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top:70px;
+    background-color: #ccbfaf;
     font-weight: bold;
-    color:white;
+    color:#104e8b;
     font-family: Rockwell;
+    text-transform: uppercase;
+    display: inline-block;
 }
 
 
@@ -21,7 +24,7 @@ table{
 }
 
 td{
-    font-size:30px;
+    font-size:25px;
 }
 
 .recordsTable{
@@ -39,17 +42,26 @@ td{
     font-size:80px;
     margin-top:10px;
     font-family: Rockwell;
+    color:#104e8b;
 }
 
 th, td {
-    text-align: left;
+    text-align: center;
     padding: 8px;
+    font-family: "Agency FB";
+
+}
+
+th {
+    background-color: #104e8b;
+    color: white;
+    font-size: 30px;
 }
 
 tr:nth-child(even)
-{background-color: blueviolet;}
+{background-color: #efebe7;}
 
-th {
-    background-color: blueviolet;
-    color: white;
+tr:nth-child(odd){
+    background-color: #f9f8f7;
 }
+

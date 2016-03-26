@@ -1,6 +1,8 @@
 /**
  * Created by DorianTs on 21/03/2016.
  */
+var app = angular.module('welcomeScreen', ['ngMaterial']);
+
 var loadWelcomeScreen = function(){
     $("#newGameButt").click(clickListener);
     $("#recordsButt").click(clickListener);

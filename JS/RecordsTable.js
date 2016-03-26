@@ -2,6 +2,7 @@
  * Created by DorianTs on 19/03/2016.
  */
 
+var app = angular.module("recordsTable", ['ngMaterial']);
 
 var clickListener = function(e){
     if(e.target.id == "mainPage")
@@ -65,14 +66,25 @@ var fillTable = function() {
 };
 
 var newlist = function(){
-    var answer = confirm("Creating a new list will erase existing list. Are you sure you want to create a new list?");
-    if(answer === false)
-        return;
-    if(localStorage.getItem("Items") != undefined)
-        localStorage.removeItem("Items");
-    var items = [];
-    localStorage.setItem("Items", JSON.stringify(items));
-    fillTable();
+    swal({
+        title: "Are you sure?",
+        text: "Creating a new list will erase the existing list totally",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes",
+        closeOnConfirm: false },
+        function(){
+            if(localStorage.getItem("Items") != undefined)
+                localStorage.removeItem("Items");
+            var items = [];
+            localStorage.setItem("Items", JSON.stringify(items));
+            fillTable();
+            swal("Done", "New list has been created", "success");
+        });
+
+    return;
+
 }
 
 function sortTableByScore(items){

@@ -1,101 +1,29 @@
-.ScreenPanel{
+article{
     margin-left: auto;
     margin-right: auto;
-    height:630px;
-    width:800px;
-    background-color: blueviolet;
+    height:100%;
+    width:100%;
     text-align: center;
-
-}
-
-/*===============================================================
-new game button
-===============================================================*/
-#newGameButt {
-    -moz-box-shadow: 4px 10px 15px -6px #9fb4f2;
-    -webkit-box-shadow: 4px 10px 15px -6px #9fb4f2;
-    box-shadow: 4px 10px 15px -6px #9fb4f2;
-    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #d6e7e8), color-stop(1, #476e9e));
-    background:-moz-linear-gradient(top, #d6e7e8 5%, #476e9e 100%);
-    background:-webkit-linear-gradient(top, #d6e7e8 5%, #476e9e 100%);
-    background:-o-linear-gradient(top, #d6e7e8 5%, #476e9e 100%);
-    background:-ms-linear-gradient(top, #d6e7e8 5%, #476e9e 100%);
-    background:linear-gradient(to bottom, #d6e7e8 5%, #476e9e 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d6e7e8', endColorstr='#476e9e',GradientType=0);
-    background-color:#d6e7e8;
-    -moz-border-radius:5px;
-    -webkit-border-radius:5px;
-    border-radius:5px;
-    border:1px solid #4e6096;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Trebuchet MS;
-    font-size:22px;
-    font-weight:bold;
-    padding:9px 17px;
-    text-decoration:none;
-}
-#newGameButt:hover {
-    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #d6e7e8));
-    background:-moz-linear-gradient(top, #476e9e 5%, #d6e7e8 100%);
-    background:-webkit-linear-gradient(top, #476e9e 5%, #d6e7e8 100%);
-    background:-o-linear-gradient(top, #476e9e 5%, #d6e7e8 100%);
-    background:-ms-linear-gradient(top, #476e9e 5%, #d6e7e8 100%);
-    background:linear-gradient(to bottom, #476e9e 5%, #d6e7e8 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#d6e7e8',GradientType=0);
-    background-color:#476e9e;
-}
-#newGameButt:active {
     position:relative;
-    top:1px;
-}
+    z-index: 1;
 
+}
+/*http://3.bp.blogspot.com/-3aaA2IVu4HA/UbSK-acWiEI/AAAAAAAAABY/yHv9c5nd81g/s1600/j.png*/
+article:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    z-index: -1;
+    background: url(http://3.bp.blogspot.com/-3aaA2IVu4HA/UbSK-acWiEI/AAAAAAAAABY/yHv9c5nd81g/s1600/j.png);
+}
 
 /*=========================================================*/
 
-/*===============================================================
-records table button
-===============================================================*/
-#recordsButt {
-    -moz-box-shadow: 4px 10px 15px -6px #9fb4f2;
-    -webkit-box-shadow: 4px 10px 15px -6px #9fb4f2;
-    box-shadow: 4px 10px 15px -6px #9fb4f2;
-    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #d6e7e8), color-stop(1, #476e9e));
-    background:-moz-linear-gradient(top, #d6e7e8 5%, #476e9e 100%);
-    background:-webkit-linear-gradient(top, #d6e7e8 5%, #476e9e 100%);
-    background:-o-linear-gradient(top, #d6e7e8 5%, #476e9e 100%);
-    background:-ms-linear-gradient(top, #d6e7e8 5%, #476e9e 100%);
-    background:linear-gradient(to bottom, #d6e7e8 5%, #476e9e 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d6e7e8', endColorstr='#476e9e',GradientType=0);
-    background-color:#d6e7e8;
-    -moz-border-radius:5px;
-    -webkit-border-radius:5px;
-    border-radius:5px;
-    border:1px solid #4e6096;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Trebuchet MS;
-    font-size:22px;
-    font-weight:bold;
-    padding:9px 17px;
-    text-decoration:none;
-}
-#recordsButt:hover {
-    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #d6e7e8));
-    background:-moz-linear-gradient(top, #476e9e 5%, #d6e7e8 100%);
-    background:-webkit-linear-gradient(top, #476e9e 5%, #d6e7e8 100%);
-    background:-o-linear-gradient(top, #476e9e 5%, #d6e7e8 100%);
-    background:-ms-linear-gradient(top, #476e9e 5%, #d6e7e8 100%);
-    background:linear-gradient(to bottom, #476e9e 5%, #d6e7e8 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#d6e7e8',GradientType=0);
-    background-color:#476e9e;
-}
-#recordsButt:active {
-    position:relative;
-    top:1px;
-}
+
 
 
 /*=========================================================*/

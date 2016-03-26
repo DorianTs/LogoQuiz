@@ -1,7 +1,7 @@
 /**
  * Created by DorianTs on 01/03/2016.
  */
-
+var app = angular.module('gameScreen', ['ngMaterial']);
 /*===================Defines=======================*/
 var LVL_EASY = 1;
 var LVL_MEDIUM = 2;
@@ -104,36 +104,6 @@ var logoLists = (function(){
 
 
 var clickListener = function(e) {
-    if(e.target.id == "startgamebutt") {
-        $("#startgamebutt").hide();
-
-        // we need to initial the game now
-        $(".score").html(score);
-        $(".stage").html(stage);
-        $(".level").html(getLevel());
-        $(".lives").html(lives);
-        $("#helpButton").html("Get Clue ("+clues+" left)");
-
-        /*Can add here: get random number from 0 to number of logos
-        * and use this number to show random logo from our list*/
-
-        // add slogan of first logo on the screen
-        logoNumber = Math.floor(Math.random() * (logoLists.easyList.list.length));
-        logosDone.push(logoNumber);
-        $(".sloganPlace").html(logoLists.easyList.list[logoNumber].slogan);
-        $("#answer").focus();
-        $("#answer").attr('readonly',false);
-
-    }
-
-    if ( (e.target.id == "helpButton" || e.target.id == "checkButt")
-        &&
-        $("#startgamebutt").css('display') != 'none' ){
-
-        return; /* if user clicked one of the buttons before the game
-         started, we don't do nothing*/
-    }
-
     if ( (e.target.id == "helpButton" || e.target.id == "checkButt")
         &&
         $("#nextStage").css('display') != 'none' ){
@@ -145,6 +115,7 @@ var clickListener = function(e) {
 
     if(e.target.id == "helpButton")
     {
+
         if (clues == 0){
             $("#helpButton").html("No more clues :(");
             return;
@@ -164,12 +135,18 @@ var clickListener = function(e) {
     * we can go to the main page*/
     if(e.target.id == "exitButt")
     {
-        if(confirm("Are you sure you want to go back to main page?\n" +
-                "All game progress will be erased") == true)
-        {
-            window.location.href = "index.html";
-        }
-        else return;
+        swal({
+                title: "Are you sure?",
+                text: "All game progress will be erased",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes",
+                closeOnConfirm: false },
+            function(){
+                window.location.href = "index.html";
+            });
+        return;
     }
 
     // If Check button was clicked
@@ -201,11 +178,20 @@ var clickListener = function(e) {
                 $(".lives").html(lives);
 
                 setLocalStorageScore();
-                alert("Game Over!");
+
+                swal({
+                    title: "Game Over!",
+                    type: "info",
+                    showCancelButton: false,
+                    confirmButtonText: "OK",
+                    closeOnConfirm: true,
+                }, function(){
+                    window.location.href = "GameOverPage.html";
+                    return;
+                });
 
 
-                //go to other page (we need to save score for the leadership table)
-                window.location.href = "GameOverPage.html";
+
             }
             else
                 lives --;
@@ -220,11 +206,21 @@ var clickListener = function(e) {
         updateLevel();
         if(level == -1)
         {
-            alert("You finished all the logos for now! Well done!");
-            //go to other page (we need to save score for the leadership table)
             setLocalStorageScore();
-            window.location.href = "GameOverPage.html";
-            return;
+            swal({
+                title: "Well done!",
+                text:"You finished all the logos for now",
+                type: "info",
+                showCancelButton: false,
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+            }, function(){
+                window.location.href = "GameOverPage.html";
+                return;
+            });
+
+
+
         }
         $(".stage").html(stage);
 
@@ -242,7 +238,6 @@ var clickListener = function(e) {
 * Function initializes all button listeners and set
 * different initializations on the screen*/
 var loadPage = function(){
-    $("#startgamebutt").click(clickListener);
     $("#helpButton").click(clickListener);
     $("#checkButt").click(clickListener);
     $(document).keydown(clickListener);
@@ -255,6 +250,23 @@ var loadPage = function(){
 
     var savedScore = {score: 0};
     localStorage.setItem("score", JSON.stringify(savedScore));
+
+    // we need to initial the game now
+    $(".score").html(score);
+    $(".stage").html(stage);
+    $(".level").html(getLevel());
+    $(".lives").html(lives);
+    $("#helpButton").html("Get Clue ("+clues+" left)");
+
+    /*Can add here: get random number from 0 to number of logos
+     * and use this number to show random logo from our list*/
+
+    // add slogan of first logo on the screen
+    logoNumber = Math.floor(Math.random() * (logoLists.easyList.list.length));
+    logosDone.push(logoNumber);
+    $(".sloganPlace").html(logoLists.easyList.list[logoNumber].slogan);
+    $("#answer").focus();
+    $("#answer").attr('readonly',false);
 };
 
 /*Function checks what level the player in and return a string

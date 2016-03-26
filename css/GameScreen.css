@@ -1,55 +1,52 @@
 #startgamebutt{
-    position: absolute;
-    margin-left:267px;
+    margin-left: auto;
+    margin-right:auto;
 
-    display:inline-block;
+    display:block;
     margin-top:0px;
-    width:800px;
-    background-color: black;
-    color:white;
-    font-weight:bold;
+    width:100%;
+    background-color: #ccbfaf;
+    color:#104e8b;
+
     font-family:Rockwell;
     font-size:30px;
 
 }
-.ScreenPanel{
-    margin-left: auto;
-    margin-right: auto;
-    height:630px;
-    width:800px;
-    background-color: blueviolet;
-    text-align: left;
-}
 
 .scoreLabel, .stageLabel, .levelLabel, .LivesLabel {
+    margin-left:auto;
+    margin-right: auto;
     display:inline-block;
-    margin-left:60px;
-    margin-top:70px;
-    font-size:25px;
-    color:white;
+    margin-left:90px;
+    margin-top:40px;
+    font-size:30px;
+    color:#104e8b;
     font-family: Rockwell;
 }
 
 .labelans{
     display:inline-block;
+    margin-left:auto;
+    margin-right:auto;
     margin-top:100px;
-    margin-left:280px;
     font-size:20px;
-    color:white;
+    color:#104e8b;
     font-family: Rockwell;
 
 }
 
 .sloganPlace{
     text-align:center;
-    font-size:30px;
-    color:ivory;
+    font-size:70px;
+    color:#104e8b;
     font-family:Century Gothic;
-    margin-top:100px;
+    font-weight: bold;
+    margin-top:50px;
 }
 
 #answer{
-    margin-left:240px;
+    margin-right: auto;
+    margin-left: auto;
     margin-top:10px;
     width:300px;
     height:30px;
@@ -59,25 +56,37 @@
 
 #helpButton, #checkButt, #exitButt{
     font-size:20px;
-    width:220px;
-    height:40px;
-    margin-left:10px;
+    width:270px;
+    height:60px;
+    margin-right: auto;
+    margin-left: auto;
     margin-top:125px;
-    background-color: black;
+    background-color: #ccbfaf;
     font-weight: bold;
-    color:white;
+    color:#104e8b;
     font-family: Rockwell;
+    text-transform: uppercase;
+    display: inline-block;
 }
 
 #nextStage{
-    position:absolute;
-    top:370px;
-    margin-left:290px;
-    font-size:20px;
-    background-color: coral;
+    position: absolute;
+    top:200px;
+    left:900px;
+    font-size:30px;
+    background: rgba(169,3,41,1);
+    background: -moz-linear-gradient(left, rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%);
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(left, rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%);
+    background: -o-linear-gradient(left, rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%);
+    background: -ms-linear-gradient(left, rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%);
+    background: linear-gradient(to right, rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019', GradientType=1 );
     font-weight: bold;
     color:white;
     font-family: Rockwell;
+    border-radius: 100px;
+    height:150px;
 
 }
 
@@ -87,8 +96,9 @@
 
 #img{
     position: absolute;
+    top:250px;
     height:200px;
-    width:200px;
-    margin-left:10px;
+    width:270px;
+    margin-left:50px;
 }
 

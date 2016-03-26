@@ -1,6 +1,8 @@
 /**
  * Created by DorianTs on 21/03/2016.
  */
+var app = angular.module("gameOver", ['ngMaterial']);
+
 var loadGameOverScreen = function(){
     $("#cancelButt").click(clickListener);
     $("#sendButt").click(clickListener);
@@ -8,8 +10,6 @@ var loadGameOverScreen = function(){
     name = null;
     var savedName = {name: name};
     localStorage.setItem("name", JSON.stringify(savedName));
-
-    $("#playerName").focus();
 };
 
 var clickListener = function(e) {

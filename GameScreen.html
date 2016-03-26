@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="gameScreen" ng-cloak>
 <head>
     <meta charset="UTF-8">
     <title>Logo Quiz</title>
-    <script type = "text/javascript" src = "JS/GameLogic.js"></script>
     <link rel = "stylesheet" href = "css/GeneralStyle.css" type = "text/css"/>
     <link rel = "stylesheet" href = "css/GameScreen.css" type = "text/css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
+
 </head>
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
 <body onload="loadPage()">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type = "text/javascript" src = "JS/GameLogic.js"></script>
+<script src="sweetalert-master/dist/sweetalert.min.js"></script>
 
-<button type="button" id="startgamebutt">Start The game</button>
-<div class="ScreenPanel">
-
+<article class="screenPanel">
     <span class="scoreLabel">Score: <span class="score"></span> </span>
 
     <span class="stageLabel">Stage: <span class="stage"></span> </span>
@@ -30,13 +37,13 @@
     <br/>
     <input type="text" id="answer" autofocus/>
     <br/>
-    <button type="button" id="nextStage">Well done! next stage here</button>
+    <button type="button" id="nextStage">Next stage here</button>
     <button type="button" id="helpButton">Get Clue</button>
     <button type="button" id="checkButt">Check Answer</button>
     <button type="button" id="exitButt">Return to main page</button>
 
 
-</div>
+</article>
 
 
 </body>
