@@ -56,28 +56,28 @@ var logoLists = (function(){
     easy = new LogoList();
     easy.addLogo("אסם", "זה טוב זה טוב זה", LVL_EASY, "css/logos/easy/osem.jpg");
     easy.addLogo("בזק", "הכי טוב בבית", LVL_EASY, "css/logos/easy/bezeq.png");
-    easy.addLogo("012 smile", "סתם כי בא לי לדבר", LVL_EASY, "css/logos/easy/012.png");
+    easy.addLogo("012 סמייל", "סתם כי בא לי לדבר", LVL_EASY, "css/logos/easy/012.png");
     easy.addLogo("לאומי קארד", "תמיד, לפנק, לפנק, לפנק", LVL_EASY, "css/logos/easy/leumi.jpg");
     easy.addLogo("הראל", "אולי יש לכם ביטוח בריאות אבל אין לכם " , LVL_EASY, "css/logos/easy/harel.png");
     easy.addLogo("אלפא רומיאו", "זה שאתה נושם, לא אומר שאתה חי", LVL_EASY, "css/logos/easy/romeo.jpg");
     easy.addLogo("נביעות", "לגוף ולנשמה", LVL_EASY, "css/logos/easy/neviot.jpg");
-    easy.addLogo("Nike", "just do it", LVL_EASY, "css/logos/easy/nike.png");
+    easy.addLogo("נייק", "just do it", LVL_EASY, "css/logos/easy/nike.png");
     easy.addLogo("תפוצ'יפס", "טבעי שלא תשלוט בעצמך", LVL_EASY, "css/logos/easy/tapuchips.png");
     easy.addLogo("אל על", "הכי בבית בעולם", LVL_EASY, "css/logos/easy/elal.jpg");
     easy.addLogo("מחסני תאורה", "באתי, נדלקתי!", LVL_EASY, "css/logos/easy/teura.jpg");
     easy.addLogo("צבר", "חומוס עושים באהבה או שלא עושים בכלל", LVL_EASY, "css/logos/easy/tzabar.jpg");
 
     medium = new LogoList();
-    medium.addLogo("Wobi", "משווים וקונים ביטוח", LVL_MEDIUM, "css/logos/medium/wobi.jpg");
+    medium.addLogo("וובי", "משווים וקונים ביטוח", LVL_MEDIUM, "css/logos/medium/wobi.jpg");
     medium.addLogo("רכבת ישראל", "פשוט ליהנות מהדרך", LVL_MEDIUM, "css/logos/medium/rakevet.jpg");
     medium.addLogo("תנובה", "לגדול בבית ישראלי", LVL_MEDIUM, "css/logos/medium/tnuva.png");
-    medium.addLogo("Nescafe", "it all starts with a-", LVL_MEDIUM, "css/logos/medium/Nescafe.jpg");
+    medium.addLogo("נסקפה", "it all starts with a-", LVL_MEDIUM, "css/logos/medium/Nescafe.jpg");
     medium.addLogo("מטרנה", "הכי קרוב לאמא", LVL_MEDIUM, "css/logos/medium/materna.png");
-    medium.addLogo("Renault", "Drive the change", LVL_MEDIUM, "css/logos/medium/reno.jpg");
+    medium.addLogo("רנו", "Drive the change", LVL_MEDIUM, "css/logos/medium/reno.jpg");
     medium.addLogo("קוקה קולה", "לאהוב את החיים", LVL_MEDIUM, "css/logos/medium/cola.png");
-    medium.addLogo("Apple", "Think different", LVL_MEDIUM, "css/logos/medium/apple.png");
-    medium.addLogo("H&O", "זה רק נראה יקר", LVL_MEDIUM, "css/logos/medium/hno.png");
-    medium.addLogo("McDonald's", "I'm Loving It", LVL_MEDIUM, "css/logos/medium/mcdonalds.png");
+    medium.addLogo("אפל", "Think different", LVL_MEDIUM, "css/logos/medium/apple.png");
+    medium.addLogo("אייץ' אנד או", "זה רק נראה יקר", LVL_MEDIUM, "css/logos/medium/hno.png");
+    medium.addLogo("מקדונלדס", "I'm Loving It", LVL_MEDIUM, "css/logos/medium/mcdonalds.png");
     medium.addLogo("ניקול", "במטבח זה הכל", LVL_MEDIUM, "css/logos/medium/nikol.png");
     medium.addLogo("הופ", "לגדול בידיים טובות", LVL_MEDIUM, "css/logos/medium/hop.png");
     medium.addLogo("סימילאק", "בגלל המדע", LVL_MEDIUM, "css/logos/medium/similak.jpg");
@@ -85,15 +85,14 @@ var logoLists = (function(){
     hard = new LogoList();
     hard.addLogo("שופרסל", "לקנות כמו שצריך", LVL_HARD, "css/logos/hard/shufersal.png");
     hard.addLogo("דואר ישראל", "בכל מקום בשביל כולם", LVL_HARD, "css/logos/hard/doar.png");
-    hard.addLogo("Mercedes", "The best or nothing", LVL_HARD, "css/logos/hard/mercedes.png");
-    hard.addLogo("Subaru", "Confidence in motion", LVL_HARD, "css/logos/hard/subaru.jpg");
-    hard.addLogo("Peugeot", "Motion & Emotion", LVL_HARD, "css/logos/hard/pegu.png");
-    hard.addLogo("Kia", "The power to surprise", LVL_HARD, "css/logos/hard/kia.png");
-    hard.addLogo("Seat", "Enjoyneering", LVL_HARD, "css/logos/hard/seat.png");
-    hard.addLogo("BMW", "The Ultimate Driving Machine", LVL_HARD, "css/logos/hard/bmw.jpg");
-    hard.addLogo("IBM", "Think", LVL_HARD, "css/logos/hard/ibm.jpg");
-    hard.addLogo("L'oreal", "Because You're Worth It", LVL_HARD, "css/logos/hard/loreal.jpg");
-    hard.addLogo("MasterCard", "There are some things money can't buy. For everything else, there's-", 3, "css/logos/hard/mastercard.png");
+    hard.addLogo("מרצדס", "The best or nothing", LVL_HARD, "css/logos/hard/mercedes.png");
+    hard.addLogo("סובארו", "Confidence in motion", LVL_HARD, "css/logos/hard/subaru.jpg");
+    hard.addLogo("פג'ו", "Motion & Emotion", LVL_HARD, "css/logos/hard/pegu.png");
+    hard.addLogo("קיה", "The power to surprise", LVL_HARD, "css/logos/hard/kia.png");
+    hard.addLogo("סיאט", "Enjoyneering", LVL_HARD, "css/logos/hard/seat.png");
+    hard.addLogo("ב.מ.וו", "The Ultimate Driving Machine", LVL_HARD, "css/logos/hard/bmw.jpg");
+    hard.addLogo("לוריאל", "Because You're Worth It", LVL_HARD, "css/logos/hard/loreal.jpg");
+    hard.addLogo("מאסטר קארד", "There are some things money can't buy. For everything else, there's-", 3, "css/logos/hard/mastercard.png");
 
     return {
         easyList : easy,
