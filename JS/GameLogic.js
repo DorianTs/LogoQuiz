@@ -149,8 +149,8 @@ var clickListener = function(e) {
     }
 
     // If Check button was clicked
-    if(e.target.id == "checkButt" ||
-        (e.keyCode == 13 && $("#nextStage").css('display') == 'none'))
+    if(e.target.id == "checkButt" /*||
+        (e.keyCode == 13 && $("#nextStage").css('display') == 'none')*/)
     {
         var text = $("#answer").val();
         var logoName = getLogoName();
@@ -183,7 +183,8 @@ var clickListener = function(e) {
                     type: "info",
                     showCancelButton: false,
                     confirmButtonText: "OK",
-                    closeOnConfirm: true,
+                    closeOnConfirm: false,
+                    allowEscapeKey: false,
                 }, function(){
                     window.location.href = "GameOverPage.html";
                     return;
