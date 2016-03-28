@@ -20,7 +20,10 @@ var clickListener = function(e) {
     if(e.target.id == "sendButt" || e.keyCode == 13){
         var nameStr = localStorage.getItem("name");
         var nameObj = JSON.parse(nameStr);
-        nameObj.name = $("#playerName").val();
+        if($("#playerName").val() == "")
+            nameObj.name = "NoName";
+        else
+            nameObj.name = $("#playerName").val();
         localStorage.setItem("name", JSON.stringify(nameObj));
 
         window.location.href = "RecordsTable.html";
