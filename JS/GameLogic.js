@@ -165,8 +165,12 @@ var clickListener = function(e) {
             updateScore(logoLevel);
 
             $(".score").html(score); // update screen
+            var div = $(".score");
+            div.animate({fontSize: '50px'}, "slow");
+            div.animate({fontSize:'30px'}, "slow");
 
-            $("#nextStage").show();
+           // $("#nextStage").show();
+            $("#nextStage").slideDown();
             $("#answer").attr('readonly',true);
         }
         else // answer is incorrect
@@ -196,6 +200,9 @@ var clickListener = function(e) {
             else
                 lives --;
             $(".lives").html(lives); // update screen
+            var div = $(".lives");
+            div.animate({fontSize: '70px', fontWeight:'bold'}, "slow");
+            div.animate({fontSize:'30px', fontWeight:'normal'}, "slow");
         }
     }
 
