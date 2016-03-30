@@ -66,6 +66,7 @@ var logoLists = (function(){
     easy.addLogo("אל על", "הכי בבית בעולם", LVL_EASY, "css/logos/easy/elal.jpg");
     easy.addLogo("מחסני תאורה", "באתי, נדלקתי!", LVL_EASY, "css/logos/easy/teura.jpg");
     easy.addLogo("צבר", "חומוס עושים באהבה או שלא עושים בכלל", LVL_EASY, "css/logos/easy/tzabar.jpg");
+    easy.addLogo("מוטורולה", "Hello Moto", LVL_EASY, "css/logos/easy/motorola.png");
 
     medium = new LogoList();
     medium.addLogo("וובי", "משווים וקונים ביטוח", LVL_MEDIUM, "css/logos/medium/wobi.jpg");
@@ -81,6 +82,9 @@ var logoLists = (function(){
     medium.addLogo("ניקול", "במטבח זה הכל", LVL_MEDIUM, "css/logos/medium/nikol.png");
     medium.addLogo("הופ", "לגדול בידיים טובות", LVL_MEDIUM, "css/logos/medium/hop.png");
     medium.addLogo("סימילאק", "בגלל המדע", LVL_MEDIUM, "css/logos/medium/similak.jpg");
+    medium.addLogo("ענבי טלי", "כל עינב זהב", LVL_MEDIUM, "css/logos/medium/taliGrapes.jpg");
+    medium.addLogo("איביי", "The World's Online Market Place", LVL_MEDIUM, "css/logos/medium/ebay.png");
+
 
     hard = new LogoList();
     hard.addLogo("שופרסל", "לקנות כמו שצריך", LVL_HARD, "css/logos/hard/shufersal.png");
@@ -93,6 +97,9 @@ var logoLists = (function(){
     hard.addLogo("ב.מ.וו", "The Ultimate Driving Machine", LVL_HARD, "css/logos/hard/bmw.jpg");
     hard.addLogo("לוריאל", "Because You're Worth It", LVL_HARD, "css/logos/hard/loreal.jpg");
     hard.addLogo("מאסטר קארד", "There are some things money can't buy. For everything else, there's-", 3, "css/logos/hard/mastercard.png");
+    hard.addLogo("בנק יהב", "הכי משתלם בשבילך", LVL_HARD, "css/logos/hard/yahav.png");
+    hard.addLogo("נוקיה", "Connecting People", LVL_HARD, "css/logos/hard/nokia.jpg");
+    hard.addLogo("גוגל", "don't be evil", LVL_HARD, "css/logos/hard/google.png");
 
     return {
         easyList : easy,
