@@ -11,6 +11,8 @@ var clickListener = function(e){
     }
 };
 
+/*When the page comes up and loading, we need to fill our table and maybe
+* update it with new score*/
 var loadRecordsTable = function()
 {
     $("#cmdNewList").click(newlist);
@@ -31,6 +33,8 @@ var loadRecordsTable = function()
 
     if(name==null && score==0)
         return;
+
+    // adding new name and score to the table, and refresh the table
     add(name, score);
 
     ScoreObj.score = 0;
@@ -40,13 +44,16 @@ var loadRecordsTable = function()
 
 };
 
-//=========Here handling with score saving in local storage==============
+//==========Here handling with score saving in local storage==============
 var add = function(name, score) {
+    // setting the item to be stored in local storage
     var item = {name : name, score: score};
     addItem(item);
     fillTable();
 };
 
+/* function takes the items array from the local storage
+(if there isn't array, make new one) and push to him the new item */
 var addItem = function(item) {
     var itemsStr = localStorage.getItem("Items");
     if(itemsStr == null){
@@ -59,6 +66,7 @@ var addItem = function(item) {
     localStorage.setItem("Items", JSON.stringify(itemsObj));
 };
 
+// filling the html table dynamically
 var fillTable = function() {
     if(localStorage.getItem("Items") == undefined) {
        return;
@@ -91,11 +99,10 @@ var newlist = function(){
             fillTable();
             swal("Done", "New list has been created", "success");
         });
-
     return;
-
 }
 
+// Bubble sort to see the table in a descending order, starting from the winner
 function sortTableByScore(items){
     var j;
     var flag = true;   // set flag to true to begin first pass
@@ -113,7 +120,7 @@ function sortTableByScore(items){
 
                 items[j+1].score = tempScore;
                 items[j+1].name = tempName;
-                flag = true;              //shows a swap occurred
+                flag = true; //shows a swap occurred
             }
         }
     }

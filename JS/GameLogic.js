@@ -7,6 +7,8 @@ var LVL_EASY = 1;
 var LVL_MEDIUM = 2;
 var LVL_HARD = 3;
 
+
+/*Controlling how many levels are there in each stage*/
  var MIN_EASY_STAGE = 1;
  var MAX_EASY_STAGE = 5;
  var MIN_MEDIUM_STAGE = 6;
@@ -16,12 +18,18 @@ var LVL_HARD = 3;
  /*=================================================*/
 
 /*Declaring the global variables for the game*/
-var score = 0;
-var level = 1;
+var score = 0; // at first, player didn't earn points
+var level = 1; // the first level is easy logos
 var lives = 3; // how many times player can has mistakes
-var stage = 1;
-var clues = 3;
+var stage = 1; // first stage of the game
+var clues = 3; // number of clues we are about to give to player
+
+/* number of the logo, chosen from an array of logos
+according to the specific level*/
 var logoNumber;
+
+/* array that saves all the logos that has been solved, that helps
+us not to recycle same logos again to the player*/
 var logosDone = [];
 /*===================================================*/
 
@@ -32,11 +40,11 @@ function Logo(name, slogan, level, logoSymbol){
     this.name = name;
     this.slogan = slogan;
     this.level = level;
-    this.logoSymbol = logoSymbol;
+    this.logoSymbol = logoSymbol; // img link to the logo
 
 }
 
-/*Creating object LogoList. Object has a list of logos*/
+/*Object LogoList. Object has a list of logos*/
 function LogoList(){
     this.list = [];
 
@@ -101,6 +109,7 @@ var logoLists = (function(){
     hard.addLogo("נוקיה", "Connecting People", LVL_HARD, "css/logos/hard/nokia.jpg");
     hard.addLogo("גוגל", "don't be evil", LVL_HARD, "css/logos/hard/google.png");
 
+    // module gives us all the logos in arrays separated by their level
     return {
         easyList : easy,
         mediumList : medium,
@@ -108,17 +117,19 @@ var logoLists = (function(){
     };
 }() );
 
-
+/*This is the main function of our game. This is event-driven game
+ * so that each action the program does is because a button was clicked*/
 var clickListener = function(e) {
+    /* if user clicked one of the buttons before going
+     to the next stage , we don't do nothing*/
     if ( (e.target.id == "helpButton" || e.target.id == "checkButt")
         &&
         $("#nextStage").css('display') != 'none' ){
-
-        return; /* if user clicked one of the buttons before going
-        to the next stage , we don't do nothing*/
+        return;
     }
 
-
+    /*If help button was clicked, give the player the logo symbol
+    * to help him answer the trivia correct*/
     if(e.target.id == "helpButton")
     {
 
@@ -129,9 +140,8 @@ var clickListener = function(e) {
         clues--;
         $("#helpButton").html("Get Clue ("+clues+" left)");
 
-
+        // getting the link to the presented logo
         var linkToImg = getLinkToLogo(level);
-
 
         $("#img").attr("src", linkToImg);
         $("#img").show(1000);
@@ -155,13 +165,16 @@ var clickListener = function(e) {
         return;
     }
 
-    // If Check button was clicked
+    /* If Check button was clicked, check player's answer with
+    * the answer that saved in the system. if he guess it right,
+    * score will be updated and nextStageButton will be appeared. else,
+    * decrement the lives in one till no more lives.*/
     if(e.target.id == "checkButt" /*||
-        (e.keyCode == 13 && $("#nextStage").css('display') == 'none')*/)
-    {
+        (e.keyCode == 13 && $("#nextStage").css('display') == 'none')*/) {
         var text = $("#answer").val();
         var logoName = getLogoName();
 
+        // comparing answers
         var res = text.localeCompare(logoName);
 
         if(res == 0) // answer is correct
@@ -176,17 +189,17 @@ var clickListener = function(e) {
             div.animate({fontSize: '50px'}, "slow");
             div.animate({fontSize:'30px'}, "slow");
 
-           // $("#nextStage").show();
             $("#nextStage").slideDown();
             $("#answer").attr('readonly',true);
         }
         else // answer is incorrect
         {
-            if(lives == 1)
-            {
+            if(lives == 1) {
                 lives = 0;
                 $(".lives").html(lives);
 
+                /* update the local storage in the final player's score
+                * for saving it later on the leadership table*/
                 setLocalStorageScore();
 
                 swal({
@@ -200,11 +213,8 @@ var clickListener = function(e) {
                     window.location.href = "GameOverPage.html";
                     return;
                 });
-
-
-
             }
-            else
+            else // answer is incorrect bu still has lives
                 lives --;
             $(".lives").html(lives); // update screen
             var div = $(".lives");
@@ -213,14 +223,15 @@ var clickListener = function(e) {
         }
     }
 
-    if(e.target.id == "nextStage" ||
-        (e.keyCode == 13 && $("#nextStage").css('display') != 'none'))
-    {
+    /*If player guessed the answer right, this button will be shown
+    * and this button is the gateway for the next stage*/
+    if(e.target.id == "nextStage"
+        || (e.keyCode == 13 && $("#nextStage").css('display') != 'none')) {
         stage++;
-        updateLevel();
-        if(level == -1)
+        updateLevel(); // maybe player finished a level
+        if(level == -1) // flag that tells us- player finished all stages
         {
-            setLocalStorageScore();
+            setLocalStorageScore(); // updating final score in the local storage
             swal({
                 title: "Well done!",
                 text:"You finished all the logos for now",
@@ -232,17 +243,20 @@ var clickListener = function(e) {
                 window.location.href = "GameOverPage.html";
                 return;
             });
-
-
-
         }
+
         $(".stage").html(stage);
 
         // reset the 'stages done' array to the new level of game
         if(stage == MIN_MEDIUM_STAGE || stage == MIN_HARD_STAGE)
-            logosDone = [];
+            logosDone = []; // new level required new array of stages done
+
+        // To ensure same level won't appear again
         setLogoNumber();
+
         logosDone.push(logoNumber);
+
+        // updating the screen with a new stage
         $(".sloganPlace").html(getLogoSlogan());
         cleanScreen();
     }
@@ -271,9 +285,6 @@ var loadPage = function(){
     $(".level").html(getLevel());
     $(".lives").html(lives);
     $("#helpButton").html("Get Clue ("+clues+" left)");
-
-    /*Can add here: get random number from 0 to number of logos
-     * and use this number to show random logo from our list*/
 
     // add slogan of first logo on the screen
     logoNumber = Math.floor(Math.random() * (logoLists.easyList.list.length));
@@ -402,7 +413,7 @@ function setLogoNumber(){
         for (i = 0; i < logosDone.length; i++) {
             if (logoNumber == logosDone[i]) {
                 logoNumber = getRandomLogoNumber();
-                break;
+                i=-1; // start over the running on the array
             }
         }
         valid = true;
@@ -420,8 +431,15 @@ function cleanScreen() {
 
 /*Function sets the player score in the local storage*/
 function setLocalStorageScore(){
+    // Getting the JSON 'score' from local storage
     var ScoreStr = localStorage.getItem("score");
+
+    // parse JSON to an object
     var ScoreObj = JSON.parse(ScoreStr);
+
+    // update score
     ScoreObj.score = score;
+
+    // set local storage wuth the updated score
     localStorage.setItem("score", JSON.stringify(ScoreObj));
 }
