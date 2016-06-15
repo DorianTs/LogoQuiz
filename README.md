@@ -1,2 +1,2 @@
 # SloganQuiz
-## Game Here - http://logoquiz.azurewebsites.net/
+## Game Here - http://sloganquiz.azurewebsites.net/
